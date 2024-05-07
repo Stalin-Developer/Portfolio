@@ -530,20 +530,29 @@ h3{
     z-index: 2;
 }
 
-/* ----- CONTACT FORM ----- */
-.form-control{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-.form-inputs{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-}
-.input-field{
+
+
+
+
+
+
+
+
+
+/* ----- CONTACT FORM REMAKE TO WORK WITH NETLIFY ----- */
+form{
     width: 50%;
+}
+
+.senderInformation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.senderInformation input{
+    width: 48%;
     height: 55px;
     background: transparent;
     border: 2px solid #AAA;
@@ -551,6 +560,7 @@ h3{
     padding-inline: 20px;
     outline: none;
 }
+
 textarea{
     width: 100%;
     height: 180px;
@@ -561,20 +571,52 @@ textarea{
     outline: none;
     resize: none;
 }
-.form-button>.btn{
+
+form button{
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--second-color);
     color: var(--color-white);
+
+    font-weight: 500;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
 }
-.form-button>.btn:hover{
+form button:hover{
     background: #00B5E7;
 }
-.form-button i{
+
+form button i{
+    margin-left: 10px;
     font-size: 18px;
     rotate: -45deg;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ----- FOOTER BOX ----- */
 footer{
@@ -762,6 +804,16 @@ footer{
     .about-info, .contact-info{
         width: 100%;
     }
+
+    /*We change the styles for the form.*/
+    form{
+        width: 100%;
+    }
+    
+
+
+
+
     .project-container{
         justify-content: center;
     }
@@ -780,12 +832,20 @@ footer{
     .project-box{
         width: 100%;
     }
-    .form-inputs{
+    
+    /*We change the styles of the inputs of the form.*/
+    form .senderInformation{
         flex-direction: column;
-    }
-    .input-field{
         width: 100%;
     }
+    .senderInformation input{
+        width: 100%;
+    }
+    .senderInformation input:first-child{
+        margin-bottom: 10px;
+    }
+
+    
 
 
     /*Hide scroll down button.*/

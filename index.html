@@ -341,26 +341,25 @@
                     </div>
 
 
-                    <!--Form-->
+                    <!--Form that sends the information to netlify.-->
                     <form name="contact" method="POST" data-netlify="true">
-                        <p>
-                          <label>Your Name: <input type="text" name="name" /></label>
-                        </p>
-                        <p>
-                          <label>Your Email: <input type="email" name="email" /></label>
-                        </p>
+                        <div class="senderInformation">
+                            <input type="text" name="name" placeholder="Your Name"/>
+                        
+                            <input type="email" name="email" placeholder="Your Email"/>
+                        </div>
+                        
 
-                        <p>
-                          <label>Message: <textarea name="message"></textarea></label>
-                        </p>
+                        
+                        <textarea name="message" placeholder="Your Message"></textarea>
 
                         <!--Recaptcha 2 to avoid spam.-->
                         <div data-netlify-recaptcha="true"></div>
 
-                        <p>
-                          <button type="submit">Send</button>
-                        </p>
-                      </form>
+                        
+                        <button type="submit" >Send <i class="uil uil-message"></i></button>
+                    </form>
+
                 </div>
             </section>
 
