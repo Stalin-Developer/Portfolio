@@ -585,6 +585,9 @@ form button{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s;
+
+    /*We separete the button from the recaptcha.*/
+    margin-top: 5px;
 }
 form button:hover{
     background: #00B5E7;
@@ -845,7 +848,7 @@ footer{
         margin-bottom: 10px;
     }
 
-    
+
 
 
     /*Hide scroll down button.*/
