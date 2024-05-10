@@ -375,68 +375,70 @@ h3{
     flex-wrap: wrap;
 }
 .project-box{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    height: 240px;
-    background: var(--color-white);
+    width: 40%;
+    height: 550px;
+    background: rgb(136, 136, 136);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
 }
 
-.project-box .image-project{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    /*Occupy the whole area of the container without loss quality.*/
-    object-fit: cover;    
-}
+
 
 .project-box .info-project{
+    width: 100%;
+    height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
-
-    /*We hide the information.*/
-    opacity: 0;
-
-    /*The information hides quickly.*/
-    transition: opacity 0.2s ease-in;
 }
 
 .info-project h3{
     color: white;
     text-align: center;
+
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
 }
 .info-project p{
     color: white;
     text-align: center;
+
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
+}
+
+.info-project .image-project{
+    position: absolute;
+    width: 70%;
+    
+    /*Occupy the whole area of the container without loss quality.*/
+    object-fit: cover;  
+    
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
+}
+
+/*Styles for the skills of each project.*/
+.info-project .skills-list span{
+    background: #f2efef;
+    color: #525151;
+    transition: all 0.5s;
+}
+.info-project .skills-list span:hover{
+    background: var(--second-color);
+    color: white;
 }
 
 .info-project .buttons{
     width: 100%;
     display: flex;
-    justify-content: space-around;
-
-    /*We move the buttons more into down to hide them.
-    This is to the user avoid to click on the buttons accidentally.*/
-    position: relative;
-    bottom: -90px;
-
-    /*The buttons must take a while to appear. Otherwise it doesn't take effect.*/
-    transition: all 1s;
-}
-.info-project:hover .buttons{
-    /*When the user does click, the buttons come back to their original position.*/
-    bottom: 0px;
+    justify-content: space-around;    
 }
 
 .buttons .btn.blue-btn{
@@ -450,35 +452,6 @@ h3{
 }
 
 
-
-.project-box::after{
-    content: "";
-    position: absolute;
-    bottom: -100%;
-
-    /*When do hover we create a layer that cover the image and we add it a grade of transparency.*/
-    background: rgba(0, 0, 0, 0.7);
-
-    width: 100%;
-    height: 100%;
-    transition: 0.6s;
-    z-index: 1;
-}
-
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after{
-    bottom: 0;
-}
-
-.project-box:hover .info-project{
-    /*We show the information.*/
-    opacity: 1;
-
-    z-index: 2;
-
-    /*The information takes a while to appear.*/
-    transition: opacity 1.2s ease-out; 
-}
 
 
 
