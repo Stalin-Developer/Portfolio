@@ -205,6 +205,14 @@ nav .nav-logo{
 .featured-text-btn>.blue-btn:hover{
     background: var(--first-color-hover);
 }
+.featured-text-btn a{
+    background: #efefef;
+    color: black;
+
+    font-size: 85%;
+    text-decoration: none;
+}
+
 .social_icons{
     display: flex;
     margin-top: 5em;
@@ -322,17 +330,22 @@ h3{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-block: 30px 70px;
-    padding-inline: 20px;
+
+    /*Padding above and under of the text.*/
+    padding-block: 25px 30px;
+
+    /*Padding of the sides of the text.*/
+    padding-inline: 30px;
+
     width: 100%;
     background: var(--color-white);
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     border-radius: 20px;
 }
 .about-info p{
-    text-align: center;
+    text-align: left;
     font-size: 15px;
-    color: #777;
+    color: #777;    
 }
 .about-btn button{
     position: absolute;
