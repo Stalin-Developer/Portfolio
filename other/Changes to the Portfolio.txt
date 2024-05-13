@@ -1,0 +1,461 @@
+OUR CHANGES:
+** index.html **
+*Replace the download cv button that is in the menu, for the language selector.
+
+
+*Add language selector.
+I'll put only the last add.
+<div class="nav-button">
+             <!--Language selector-->            
+             <!--We add an expansion for google translate.
+             We put it in this location because We wanted it in the right part of menu.-->
+             <span class="languageSelector" id="google_translate_element"></span>
+         </div>
+
+
+*In the first section to put two download cv. The Download CV EN and the
+Download CV ES.
+<div class="featured-text-btn">
+                <button class="btn">Download CV EN <i class="uil uil-file-alt"></i></button>
+                <button class="btn">Download CV ES <i class="uil uil-file-alt"></i></button>
+            </div>
+
+
+
+
+
+*The hire me button, will redirect to the contact section.
+            <div class="featured-text-btn">
+                <a href="#contact" class="btn blue-btn">Hire Me</a>
+            </div>
+
+
+
+
+*Put the logo in the footer.
+        <div class="top-footer">
+            <img src="img/logo-light.png" alt="logo">
+        </div>
+
+
+
+*Customize the icons.
+            <div class="social_icons">
+                <a href="https://www.linkedin.com/in/stalin-developer" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+                <a href="https://github.com/Stalin-Developer" class="icon"><i class="uil uil-github-alt"></i></a>
+            </div>
+
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/stalin-developer" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://github.com/Stalin-Developer" class="icon"><i class="uil uil-github-alt"></i></a>
+        </div>
+
+
+
+*Add the copyright year dynamically.
+        <div class="bottom-footer">
+            <!--The placeholder is for put the year dynamically with javascript.-->
+            <p>© Copyright <span id="year-placeholder"></span> <a href="https://www.linkedin.com/in/stalin-developer" style="text-decoration: none;">Stalin Developer.</a> All rights reserved.</p>
+        </div>
+
+
+
+*Modify each box of the project section to add our project. 
+                    <div class="project-box">
+                        
+                        <div class="info-project">
+                            <div class="projectDescription">
+                                <h3>Pizza Web</h3>
+                                <p>
+                                    A pizza restaurant web site where you can see the menu, change the language of the page,
+                                    see the delivery applications that work with the restaurant. See the address of the restaurant on google maps,
+                                    contact to the restaurant through a form.
+                                </p>
+                            </div>
+
+                            <img src="img/pizza-web.png" alt="" class="image-project">
+
+                            <div class="skills-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="buttons">
+                                <a href="https://github.com/Stalin-Developer/Pizza-Restaurant-Web.git" target="_blank"
+                                    class="btn blue-btn">GitHub</a>
+                                <a href="https://pizza-web-restaurant.netlify.app/" target="_blank"
+                                    class="btn blue-btn">Live Demo</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+*Make the form work.
+                    <!--Form that sends the information to netlify.-->
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div class="senderInformation">
+                            <input type="text" name="name" placeholder="Your Name"/>
+                        
+                            <input type="email" name="email" placeholder="Your Email"/>
+                        </div>
+                        
+
+                        
+                        <textarea name="message" placeholder="Your Message"></textarea>
+
+                        <!--Recaptcha 2 to avoid spam.-->
+                        <div data-netlify-recaptcha="true"></div>
+
+                        
+                        <button type="submit" >Send <i class="uil uil-message"></i></button>
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** styles.css ** 
+*Eliminate  horizontal scroll. 
+(inside the media query 900px):
+.container{
+        overflow: hidden;
+    }
+
+
+
+*Move the mobile menu into up, for to cover a small space through which we can see
+the background.
+Extend the menu down for to cover the new small space that appears through which we can
+see the background.
+To make the tansition of show and hide the menu, more longer.
+(inside the media query 900px):
+    .nav-menu{
+        top: 70px;
+        height: 91vh;
+	transition: .8s;
+    }
+
+
+
+*We create our custom logo in freepik designer. And we replace it with the previous one.
+The resolution of the image of the logo was 1280x720.
+We add some style to locate the image property in the menu.
+nav .nav-logo{
+    width: 20%;
+}
+.nav-logo img{
+   width: 127px;
+   cursor: pointer;
+}
+
+
+
+
+*We spaced out the items more on the mobile menu.
+(inside the media query 900px):
+nav{
+        justify-content: space-between;
+    }
+
+
+
+
+*Add language selector.
+(inside the media query 900px):
+/*We move the language selector that is in the mobile menu into left to center.*/
+    .languageSelector {
+        position: relative;
+        right: 20px;
+    }
+
+
+
+
+*Revome the scroll down button in the mobile version.
+    /*Hide scroll down button.*/
+    .scroll-icon-box{
+        display: none;
+    }
+
+
+
+*Accommodate the Email of the contact section, in the mobile version.
+    /*Accommodate the Email*/
+    .contact-info p{
+        display: block;
+    }
+
+
+
+*The hire me button, will redirect to the contact section.
+.featured-text-btn>.blue-btn{
+
+    font-size: 85%;
+    text-decoration: none;
+}
+
+
+
+*Put the logo in the footer.
+/*Logo in the footer.*/
+.top-footer {
+    width: 150px;
+}
+.top-footer img{
+    width: 100%;
+}
+
+
+
+
+*Customize the icons.
+.icon{
+    color: black;
+    transition: all 0.5s;
+}
+.icon:first-child:hover{
+    color: white;
+    background: #0077b5;
+}
+.icon:nth-child(2):hover{
+    color: white;
+    background: black;
+}
+
+
+
+
+
+*Modify each box of the project section to add our project. 
+.project-box{
+    width: 40%;
+    height: 550px;
+    background: rgb(136, 136, 136);
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    overflow: hidden;
+}
+.project-box .info-project{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info-project h3{
+    color: white;
+    text-align: center;
+
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
+}
+.info-project p{
+    color: white;
+    text-align: center;
+
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
+}
+
+.info-project .image-project{
+    position: absolute;
+    width: 70%;
+    
+    /*Occupy the whole area of the container without loss quality.*/
+    object-fit: cover;  
+    
+    /*We move it a litte into up.*/
+    position: relative;
+    top: -10px;
+}
+
+/*Styles for the skills of each project.*/
+.info-project .skills-list span{
+    background: #f2efef;
+    color: #525151;
+    transition: all 0.5s;
+}
+.info-project .skills-list span:hover{
+    background: var(--second-color);
+    color: white;
+}
+
+
+
+
+
+
+*Make the form work.
+/* ----- CONTACT FORM REMAKE TO WORK WITH NETLIFY ----- */
+form{
+    width: 50%;
+}
+
+.senderInformation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.senderInformation input{
+    width: 48%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding-inline: 20px;
+    outline: none;
+}
+
+textarea{
+    width: 100%;
+    height: 180px;
+    background: transparent;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    padding: 15px 20px;
+    outline: none;
+    resize: none;
+}
+
+form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--second-color);
+    color: var(--color-white);
+
+    font-weight: 500;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s;
+
+    /*We separete the button from the recaptcha.*/
+    margin-top: 5px;
+}
+form button:hover{
+    background: #00B5E7;
+}
+
+form button i{
+    margin-left: 10px;
+    font-size: 18px;
+    rotate: -45deg;
+}
+
+
+(Media Query 900px):
+/*We change the styles for the form.*/
+    form{
+        width: 100%;
+    }
+
+(Media Query 540px):
+    /*We change the styles of the inputs of the form.*/
+    form .senderInformation{
+        flex-direction: column;
+        width: 100%;
+    }
+    .senderInformation input{
+        width: 100%;
+    }
+    .senderInformation input:first-child{
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** main.js **
+*To make that the mobile menu automatically hide after certain time, when the user 
+does click on any link.
+/* ----- CLOSE MOBILE MENU AFTER DOES CLICK ON A LINK. ----- */
+
+
+
+*We add a function to the logo for go to the beginning of the page.
+/* ----- LOGO CLICK EVENT ----- */
+
+
+
+*Add language selector.
+/* ----- EXCLUDE LANGUAGE SELECTOR OF THE AUTOMATIC SCROLL. ----- */
+
+
+
+*Add the copyright year dynamically.
+/**Copyright year dynamically. */
+// Obtain the current year.
+let currentYear = new Date().getFullYear();
+
+//Insert the current year in the copyrightBar.
+document.getElementById('year-placeholder').textContent = currentYear;
+
+
+
+*Make the form work.
+/**We update the reveal to the form. */
+srRight.reveal('form',{delay: 100})
