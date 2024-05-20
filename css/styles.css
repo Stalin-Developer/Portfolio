@@ -98,18 +98,33 @@ nav{
 
 nav .nav-logo{
     width: 20%;
+
+    /*We moved the logo because the language selector affected it.*/
+    position: relative;
+    left: -10vw;
+
+    /*In the mobile version the language selector had covered it.*/
+    z-index: 2;
 }
 .nav-logo img{
    width: 127px;
    cursor: pointer;
 }
 
+
+
 .nav-menu, .nav_menu_list{
     display: flex;
 }
 .nav-menu .nav_list{
     list-style: none;
+
+    /*We moved the nav-menu because the language selector affected it.*/
     position: relative;
+    left: -20vw;
+
+    /*In the mobile version the language selector had covered it.*/
+    z-index: 2;
 }
 .nav-link{
     text-decoration: none;
@@ -120,6 +135,9 @@ nav .nav-logo{
 }
 .nav-menu-btn{
     display: none;
+
+    /*In the mobile version the language selector had covered it.*/
+    z-index: 2;
 }
 .nav-menu-btn i{
     font-size: 28px;
@@ -142,6 +160,14 @@ nav .nav-logo{
     border-radius: 50%;
 }
 
+
+/*Language selector styles.
+We move the language selector more into the right.*/
+.nav-button{
+    z-index: 1;
+    position: fixed;
+    right: 1vw;
+}
 
 
 
@@ -703,6 +729,17 @@ footer{
         width: 320px;
         height: 320px;
     }
+
+    /*We move the menu more into the right.*/
+    .nav-menu .nav_list{
+        left: -15vw;
+    }
+
+
+    /*We move the language selector more into the right.*/
+    .nav-button{
+        right: -1vw;
+    }
 }
 
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
@@ -739,12 +776,20 @@ footer{
     }
     .nav_menu_list{
         flex-direction: column;
+
+        /*We try to center the links manually, because the language selector affected them.*/
+        position: relative;
+        right: -15vw;
     }
 
-    /*We move the language selector that is in the mobile menu into left to center.*/
-    .languageSelector {
-        position: relative;
-        right: 20px;
+    /*We move the logo more into the right.*/
+    nav .nav-logo{
+        left: -3vw;
+    }
+
+    /*We move the language selector more into the right.*/
+    .nav-button{
+        right: 15vw;
     }
 
 
@@ -815,6 +860,29 @@ footer{
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
 @media only screen and (max-width: 540px){
+    /*We move the logo to try to accommodate the language selector.*/
+    nav .nav-logo{
+        top: 10px;
+    }
+
+    /*We resize the logo to try to accommodate the language selector.*/
+    .nav-logo img{
+        width: 100px;
+    }
+
+
+    /*We move the language selector more into the right.*/
+    .nav-button{
+        right: 10vw;
+    }
+
+    /*We reduce the size of the language selector.*/
+    .languageSelector .goog-te-gadget-simple {
+        /*Change the size of the selector.*/
+        transform: scale(0.4);
+    }
+
+
     .featured-name{
         font-size: 28px;
     }
