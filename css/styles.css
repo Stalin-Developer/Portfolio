@@ -285,7 +285,11 @@ We move the language selector more into the right.*/
 }
 .image img{
     width: 380px;
-    height: 380px;
+
+    /*We did these modifications to the image to adjust inside the circle.*/
+    height: 430px;
+    transform: scale(0.8);
+
     object-fit: cover;
 }
 @keyframes imgFloat {
@@ -729,6 +733,9 @@ footer{
         width: 320px;
         height: 320px;
     }
+    .image img{
+        height: 360px;
+    }
 
     /*We move the menu more into the right.*/
     .nav-menu .nav_list{
@@ -824,6 +831,10 @@ footer{
         width: 150px;
         height: 150px;
     }
+    .image img{
+        height: 170px;
+    }
+
     .row{
         display: flex;
         flex-direction: column;
@@ -857,8 +868,8 @@ footer{
 
 }
 
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
+/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 @media only screen and (max-width: 540px){
     /*We move the logo to try to accommodate the language selector.*/
     nav .nav-logo{
