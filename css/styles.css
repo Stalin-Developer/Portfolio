@@ -331,6 +331,7 @@ We move the language selector more into the right.*/
 }
 .col{
     display: flex;
+    flex-direction: column; /*Para que las etiquelas de las habilidades esten dispuestas verticalmente.*/
     width: 50%;
 }
 
@@ -394,12 +395,13 @@ h3{
     margin: 10px;
 }
 .skills-header{
-    margin-bottom: 30px;
+    margin-bottom: -15px;
 }
 .skills-list{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    margin-bottom: 5px;
 }
 .skills-list span{
     font-size: 14px;

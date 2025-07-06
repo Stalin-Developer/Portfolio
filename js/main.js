@@ -130,7 +130,7 @@ document.getElementById('year-placeholder').textContent = currentYear;
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Developer", "Designer"],
+  strings : ["Web Developer", "Mobile Developer"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
